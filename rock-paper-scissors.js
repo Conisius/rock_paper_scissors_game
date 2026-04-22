@@ -3,9 +3,8 @@ let playerScore = 0;
 
 let computerScore = 0;
 
-let rockChoice = document.querySelector(".rock")
-let paperChoice = document.querySelector(".paper")
-let scissorsChoice = document.querySelector(".scissors")
+
+let playerChoiceButton = document.querySelector(".buttons")
 let parahraphText = document.querySelector("#outputText")
 
 function getComputerChoice() {
@@ -14,9 +13,13 @@ function getComputerChoice() {
 }
 
 
-rockChoice.addEventListener("click", (e) => {
+playerChoiceButton.addEventListener("click", (e) => {
+    if (e.target.tagName === "BUTTON") {
+        let humanChoice = e.target.id;
+        
+        playRound(humanChoice, getComputerChoice())
+    }
     
-    playRound("rock", getComputerChoice())
 })
 
 
@@ -25,7 +28,7 @@ function playRound(humanChoice, computerChoice) {
     console.log(`Me: ${humanChoice}`)
     console.log(`Computer: ${computerChoice}`)
 
-    if (humanChoice === computerChoice) console.log("It's a Tie!")
+    if (humanChoice === computerChoice) console.log(`It's a Tie! Both chose ${humanChoice}`)
 
     else if (
         (humanChoice === "rock" && computerChoice === "scissors") ||
