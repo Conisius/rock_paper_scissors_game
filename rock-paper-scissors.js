@@ -4,7 +4,20 @@ let playerScore = 0;
 
 let computerScore = 0;
 
+let rockChoice = document.querySelector(".rock")
+let paperChoice = document.querySelector(".paper")
+let scissorsChoice = document.querySelector(".scissors")
 
+function getComputerChoice() {
+    const choices = ["rock", "paper", "scissors"]
+    return choices[Math.floor(Math.random() * 3)]
+}
+
+
+rockChoice.addEventListener("click", (e) => {
+    
+    console.log(playRound("rock", computerChoice()))
+})
 
 
 
@@ -28,7 +41,7 @@ function playRound(humanChoice, computerChoice) {
         computerScore++
         console.log("You Lose!")
     }
-    console.log(`Me: ${playerScore} Computer: ${computerScore}`)
+    
 }
 
 
