@@ -1,4 +1,3 @@
-console.log("Hello World!")
 
 let playerScore = 0;
 
@@ -7,6 +6,7 @@ let computerScore = 0;
 let rockChoice = document.querySelector(".rock")
 let paperChoice = document.querySelector(".paper")
 let scissorsChoice = document.querySelector(".scissors")
+let parahraphText = document.querySelector("#outputText")
 
 function getComputerChoice() {
     const choices = ["rock", "paper", "scissors"]
@@ -16,7 +16,7 @@ function getComputerChoice() {
 
 rockChoice.addEventListener("click", (e) => {
     
-    console.log(playRound("rock", computerChoice()))
+    playRound("rock", getComputerChoice())
 })
 
 
@@ -27,19 +27,25 @@ function playRound(humanChoice, computerChoice) {
 
     if (humanChoice === computerChoice) console.log("It's a Tie!")
 
-    if (
+    else if (
         (humanChoice === "rock" && computerChoice === "scissors") ||
         (humanChoice === "paper" && computerChoice === "rock") ||
         (humanChoice === "scissors" && computerChoice === "paper") 
         )
      {
         playerScore++
-        console.log("You Win!"); 
+        parahraphText.textContent = "You win"
+        console.log(`You Win! 
+Your Score is: ${playerScore}
+Computer Score is: ${computerScore}`); 
     }
 
     else {
         computerScore++
-        console.log("You Lose!")
+        parahraphText.textContent = "You lose"
+        console.log(`You Lose!
+Your Score is: ${playerScore}
+Computer Score is: ${computerScore}`)
     }
     
 }
