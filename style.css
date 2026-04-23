@@ -14,7 +14,7 @@
 .reset {
     width: 100px;
     height: 30px;
-    margin: 0 auto;
+    margin-left: 10px;
 }
 
 h1 {
@@ -67,4 +67,16 @@ p {
     width: 100px;
     height: 30px;
     margin: 20px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer > p {
+    width: 240px;
+    height: 30px;
+    margin: 10px;
+    border: 2px solid black;
 }

@@ -11,6 +11,7 @@ let computerNum = document.querySelector("#computerScore")
 let winText = document.querySelector(".winText")
 let resetButton = document.querySelector(".reset")
 let buttons =  document.querySelectorAll(".btn")
+let computerShowChoice = document.querySelector(".computerShowChoice")
 
 function getComputerChoice() {
     const choices = ["rock", "paper", "scissors"]
@@ -64,6 +65,9 @@ function resetGame() {
 
 
 function playRound(humanChoice, computerChoice) {
+
+    computerShowChoice.textContent = `Computer chose: ${computerChoice}`;
+    
 
     if (humanChoice === computerChoice) parahraphText.textContent = `It's a Tie! Both chose ${humanChoice}.`
 
