@@ -79,4 +79,5 @@ p {
     height: 30px;
     margin: 10px;
     border: 2px solid black;
+    text-transform: capitalize;
 }
